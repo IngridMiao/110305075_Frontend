@@ -1,0 +1,50 @@
+
+ul {
+    list-style-type: none;
+    position: static; 
+    top: 10em; 
+    left: 5em;
+    width: 20em;
+}
+
+
+body {
+    color: cyan;
+    background-color: darkgrey;
+    font-family: Verdana, Tahoma, sans-serif, arial; 
+}
+
+
+h1 {
+    font-family: Verdana, Tahoma, sans-serif, arial;
+}
+
+
+@media all {
+    body {
+        background-color: #f4f4f4;
+    }
+
+    ul {
+        position: relative;
+        top: 1em;
+        left: 2em;
+        width: 15em;
+    }
+}
+
+@media print {
+    body {
+        background-color: #fff;
+    }
+
+    h1 {
+        color: #000;
+    }
+
+    ul {
+        position: static;
+        width: auto;
+    }
+}
+
