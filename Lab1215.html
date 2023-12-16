@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input Comparison</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            transition: background-color 0.3s ease;
+        }
+
+        button {
+            padding: 10px;
+            margin: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<script>
+    function compareInputs() {
+        var input1 = parseFloat(window.prompt("Enter the 1st input"));
+        var input2 = parseFloat(window.prompt("Enter the 2nd input"));
+
+        if (!isNaN(input1) && !isNaN(input2)) {
+            if (input1 > input2) {
+                document.body.style.backgroundColor = 'lightblue';
+                document.body.innerHTML = input1 + " > " + input2;
+            } else if (input2 > input1) {
+                document.body.style.backgroundColor = 'orange';
+                document.body.innerHTML = input2 + " > " + input1;
+            } else {
+                document.body.style.backgroundColor = 'lightyellow';
+                document.body.innerHTML = input1 + " == " + input2;
+            }
+
+            // Show additional buttons
+            document.body.innerHTML += "<button onclick=\"window.alert('First Input: " + input1 + "');\">Show 1st Input</button>";
+            document.body.innerHTML += "<button onclick=\"window.alert('Second Input: " + input2 + "');\">Show 2nd Input</button>";
+        } else {
+            window.alert("Invalid input. Please enter valid numbers.");
+        }
+    }
+
+    // Automatically compare inputs on page load
+    window.onload = function() {
+        compareInputs();
+    };
+</script>
+
+</body>
+</html>
+
+
+
+
